@@ -47,7 +47,21 @@ The firmware utilizes internal pull-up resistors (`INPUT_PULLUP`), meaning the d
 ## 💻 Software Setup
 
 ### Step 1: Install Python Dependencies
-Make sure you have Python installed, then run the following command in your terminal to install the required libraries for serial communication and OBS integration:
+  - Make sure you have Python installed
+  - then run the following command in your terminal to install the required libraries for serial communication and OBS integration:
 
 ```bash
 pip install pyserial obs-websocket-py
+```
+
+### Step 2: Configure OBS Studio (Optional)
+If you want to use OBS features (Mic Mute / Scene switching):
+  - Open OBS Studio.
+  - Go to Tools -> WebSocket Server Settings.
+  - Enable WebSocket server, note the port (default: 4455), and set a password. Update these values in the Python script.
+
+### 🏃‍♂️ Usage
+  - Flash the C++ firmware onto your microcontroller via Arduino IDE.
+  - Connect your hardware to the PC using a data USB cable.
+  - Start OBS Studio (if using OBS features).
+  - Run the Python daemon:
